@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>todo | Roblox Developer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- MUTE BUTTON -->
+<button id="muteBtn">🔊 Sound On</button>
+
+<!-- HERO -->
+<div class="hero">
+    <div class="hero-text">
+        <h1>Hi, I’m <span>todo</span></h1>
+        <h2>Roblox Gamer & Developer</h2>
+        <p>Steal a Brainrot • Brainrot Evolution</p>
+
+        <div class="buttons">
+            <a href="#play" class="btn primary">Games I Play</a>
+            <a href="#mygames" class="btn">My Games</a>
+            <a href="#vouches" class="btn">Vouches</a>
+            <a href="#contact" class="btn">Contact</a>
+        </div>
+    </div>
+
+    <div class="hero-image">
+        <img src="avatar.png" alt="Roblox Avatar">
+    </div>
+</div>
+
+<!-- GAMES I PLAY -->
+<section id="play" class="section">
+    <h2>Games I Play</h2>
+
+    <a href="https://www.roblox.com/games/109983668079237/Steal-a-Brainrot"
+       target="_blank"
+       class="card clickable"
+       onmouseenter="playHover()"
+       onclick="playClick()">
+
+        <h3>
+            <img src="roblox.png" class="icon">
+            Steal a Brainrot
+        </h3>
+        <p>Main game I grind, trade, and play competitively.</p>
+    </a>
+
+    <a href="https://www.roblox.com/games/111989938562194/Brainrot-Evolution"
+       target="_blank"
+       class="card clickable"
+       onmouseenter="playHover()"
+       onclick="playClick()">
+
+        <h3>
+            <img src="roblox.png" class="icon">
+            Brainrot Evolution
+        </h3>
+        <p>Evolution-based progression gameplay.</p>
+    </a>
+</section>
+
+<!-- MY GAMES -->
+<section id="mygames" class="section">
+    <h2>My Games</h2>
+
+    <div class="card">
+        <h3>Steal It</h3>
+        <p>Custom Roblox project (add link later).</p>
+    </div>
+
+    <div class="card">
+        <h3>Click It</h3>
+        <p>Fast click-based Roblox game.</p>
+    </div>
+</section>
+
+<!-- VOUCHES -->
+<section id="vouches" class="section">
+    <h2>Vouches</h2>
+    <div class="vouches">
+        <img src="vouch1.png">
+        <img src="vouch2.png">
+        <img src="vouch3.png">
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section">
+    <h2>Contact</h2>
+    <p>Email: <b>todoisnotcool@gmail.com</b></p>
+</section>
+
+<!-- SOUNDS -->
+<audio id="hoverSound" src="sounds/hover.mp3"></audio>
+<audio id="clickSound" src="sounds/click.mp3"></audio>
+
+<script>
+    const hoverSound = document.getElementById("hoverSound");
+    const clickSound = document.getElementById("clickSound");
+    const muteBtn = document.getElementById("muteBtn");
+
+    let muted = false;
+
+    hoverSound.volume = 0.25;
+    clickSound.volume = 0.5;
+
+    function playHover() {
+        if (!muted) hoverSound.play();
+    }
+
+    function playClick() {
+        if (!muted) clickSound.play();
+    }
+
+    muteBtn.onclick = () => {
+        muted = !muted;
+        muteBtn.textContent = muted ? "🔇 Sound Off" : "🔊 Sound On";
+    };
+</script>
+
+</body>
+</html>

@@ -1,0 +1,181 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: radial-gradient(circle at top, #200000, #000);
+    color: white;
+}
+
+/* MUTE BUTTON */
+#muteBtn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #111;
+    color: white;
+    border: 1px solid #ff2b2b;
+    padding: 8px 14px;
+    border-radius: 20px;
+    cursor: pointer;
+    z-index: 999;
+}
+
+#muteBtn:hover {
+    box-shadow: 0 0 15px #ff2b2b;
+}
+
+/* HERO */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10%;
+    animation: fadeIn 1.2s ease forwards;
+}
+
+.hero-text h1 {
+    font-size: 3.8rem;
+}
+
+.hero-text h1 span {
+    color: #ff2b2b;
+    text-shadow: 0 0 25px #ff2b2b;
+}
+
+.hero-text h2 {
+    color: #aaa;
+}
+
+.hero-text p {
+    margin: 20px 0;
+    color: #bbb;
+}
+
+/* BUTTONS */
+.buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 12px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    color: white;
+    border: 1px solid #ff2b2b;
+    transition: 0.3s;
+}
+
+.btn.primary {
+    background: #ff2b2b;
+    color: black;
+}
+
+.btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 30px #ff2b2b;
+}
+
+/* HERO IMAGE */
+.hero-image img {
+    width: 320px;
+    filter: drop-shadow(0 0 35px #ff2b2b);
+    animation: float 4s ease-in-out infinite;
+}
+
+/* SECTIONS */
+.section {
+    padding: 80px 10%;
+}
+
+.section h2 {
+    font-size: 2.4rem;
+    margin-bottom: 30px;
+}
+
+/* CARDS */
+.card {
+    background: #111;
+    padding: 25px;
+    border-radius: 16px;
+    margin-bottom: 20px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    box-shadow: 0 0 30px #ff2b2b;
+    animation: shake 0.4s;
+}
+
+.clickable {
+    text-decoration: none;
+    color: white;
+}
+
+/* ROBLOX ICON */
+.icon {
+    width: 20px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+/* VOUCHES */
+.vouches {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.vouches img {
+    width: 220px;
+    border-radius: 14px;
+    transition: 0.3s;
+}
+
+.vouches img:hover {
+    transform: scale(1.15);
+    box-shadow: 0 0 30px #ff2b2b;
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-4px); }
+    50% { transform: translateX(4px); }
+    75% { transform: translateX(-4px); }
+    100% { transform: translateX(0); }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-image img {
+        width: 220px;
+        margin-top: 40px;
+    }
+}
